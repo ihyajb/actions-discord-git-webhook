@@ -28,7 +28,7 @@ This is a hard fork of the original Discord Webhook GitHub Action, which was spe
 
 ### `censor_username`
 
-Censor username with by only showing the first and last character. For example, `j...y` as `ihyajb`.
+Censor username with by only showing the first and last character. For example, `i...b` as `ihyajb`.
 
 ### `repo_name`
 
