@@ -6,7 +6,7 @@
 
 This is a hard fork of the original Discord Webhook GitHub Action, which was specifically catered towards Java development. This is one a slightly more generic one where we just want to post commits via webhooks.
 
-![preview](https://aj.fileglass.com/Nxn7FNwDqr)
+![preview](./docs/img.png)
 
 ## :mailbox_with_no_mail: Inputs
 
