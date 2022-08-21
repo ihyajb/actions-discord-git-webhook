@@ -2,7 +2,7 @@
 
 > All credits go to the initial release by [baked-libs/discord-webhook](https://github.com/baked-libs/discord-webhook).
 
-> Credits also go to the edited release by [ihyajb/actions-discord-git-webhook](https://github.com/ihyajb/actions-discord-git-webhook).
+> Credits also go to the edited release by [ihyajb/actions-discord-git-webhook](https://github.com/johnnyhuy/actions-discord-git-webhook).
 
 This is a hard fork of the original Discord Webhook GitHub Action, which was specifically catered towards Java development. This is one a slightly more generic one where we just want to post commits via webhooks.
 
