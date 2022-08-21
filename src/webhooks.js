@@ -69,7 +69,7 @@ module.exports.getChangeLog = (payload, hideLinks, censorUsername) => {
   let changelog = "";
 
   for (let i in commits) {
-    if (i > 3) {
+    if (i > 4) {
       changelog += `+ ${commits.length - i} more...\n`;
       break;
     }
