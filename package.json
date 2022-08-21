@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@actions/core": "^1.2.3",
-    "@actions/github": "^5.0.0",
+    "@actions/github": "^5.0.3",
     "child-process-promise": "^2.2.1",
     "discord.js": "^13.0.0",
     "xml-library": "0.2.0"
