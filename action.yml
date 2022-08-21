@@ -1,0 +1,29 @@
+name: 'discord-webhook'
+description: 'This GitHub Action sends  fancy and more meaningful discord messages for your commits. It includes Test results and coverage.'
+
+inputs:
+  webhook_url:
+    description: Discord webhook URL
+  id:
+    description: Discord Webhook ID (ignored if `webhook_url` is set)
+  token:
+    description: Discord Webhook token (ignored if `webhook_url` is set)
+  repo_name:
+    description: Overwrite repository name with a custom one
+  censor_username:
+    description: Hide the full GitHub username
+    default: false
+  hide_links:
+    description: Toggle whether to show repo links on the webhook event
+    default: false
+  color:
+    description: Color of the Discord embed
+    default: '7dbbe6'
+
+runs:
+  using: 'docker'
+  image: 'action.Dockerfile'
+
+branding:
+  icon: check-circle
+  color: blue

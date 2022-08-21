@@ -1,0 +1,28 @@
+{
+  "name": "actions-discord-git-webhook",
+  "version": "1.0.1",
+  "description": "This is a hard fork of the original Discord Webhook GitHub Action, which was specifically catered towards Java development. This is one a slightly more generic one where we just want to post commits via webhooks.",
+  "main": "src/main.js",
+  "author": "ihyajb",
+  "license": "GPL-3.0",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.3",
+    "@actions/github": "^5.0.0",
+    "child-process-promise": "^2.2.1",
+    "discord.js": "^13.0.0",
+    "xml-library": "0.2.0"
+  },
+  "devDependencies": {
+    "jest": "^27.1.1",
+    "jest-when": "^3.3.1",
+    "prettier": "^2.4.0"
+  },
+  "standard-version": {
+    "skip": {
+      "changelog": true
+    }
+  }
+}

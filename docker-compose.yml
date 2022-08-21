@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+
+  workspace:
+    image: ihyajb/actions-discord-git-webhook/workspace:latest
+    entrypoint: /bin/sh
+    build:
+      context: .
+      dockerfile: action.Dockerfile
+    volumes:
+      - ".:/opt/workspace"
+
+  release:
+    image: ihyajb/actions-discord-git-webhook/release:latest
+    build:
+      context: .
+      dockerfile: release.Dockerfile
+    volumes:
+      - ".:/opt/workspace"
+    working_dir: /opt/workspace
+    environment:
+      - CONVENTIONAL_GITHUB_RELEASER_TOKEN
+
+  action:
+    image: ihyajb/actions-discord-git-webhook/action:latest
+    build:
+      context: .
+      dockerfile: action.Dockerfile
