@@ -19,6 +19,20 @@ module.exports.send = (
     core.warning(`Aborting analysis, found no commits.`);
     return Promise.resolve();
   }
+  
+  var AuthorEmbed = [
+    `${latest.author.username} | ⚡ ${size} ${count}`
+    `https://avatars.githubusercontent.com/${latest.author.username}`
+    `https://github.com/${latest.author.username}`
+  ]
+
+  if (censorUsername === true) {
+    AuthorEmbed = [
+      `⚡ ${size} ${count}`
+      ``
+      ``
+    ]
+  }
 
   core.debug(`Received payload: ${JSON.stringify(payload, null, 2)}`);
   core.debug(`Received ${commits.length}/${size} commits...`);
@@ -29,8 +43,7 @@ module.exports.send = (
 
   let embed = new discord.MessageEmbed()
     .setColor(color)
-    .setAuthor(`${latest.author.username} | ⚡ ${size} ${count}`, `https://avatars.githubusercontent.com/${latest.author.username}`, `https://github.com/${latest.author.username}`)
-    // .setTitle(`⚡ ${size} ${count}\n📁\`${repository}\`\n🌳 \`${branch}\``)
+    .setAuthor(AuthorEmbed[0], AuthorEmbed[1], AuthorEmbed[2])
     .setTitle(`📁 \`${repository}\`\n🌳 \`${branch}\``)
     .setDescription(this.getChangeLog(payload, hideLinks, censorUsername))
     .setTimestamp(Date.parse(latest.timestamp));
