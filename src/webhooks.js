@@ -33,14 +33,16 @@ module.exports.send = (
     `https://github.com/${latest.author.username}`,
   ]
 
-  core.info(censorUsername);
-
+  
   if (censorUsername === true) {
+    core.info("Changing AuthorEmbed");
     AuthorEmbed = [
       `⚡ ${size} ${count}`,
       '',
       '',
     ]
+  } else {
+    core.info("NOT Changing AuthorEmbed");
   }
 
   let embed = new discord.MessageEmbed()
