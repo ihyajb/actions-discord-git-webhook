@@ -19,7 +19,13 @@ module.exports.send = (
     core.warning(`Aborting analysis, found no commits.`);
     return Promise.resolve();
   }
-  
+
+  core.debug(`Received payload: ${JSON.stringify(payload, null, 2)}`);
+  core.debug(`Received ${commits.length}/${size} commits...`);
+  core.info("Constructing Embed...");
+
+  let latest = commits[0];
+
   var AuthorEmbed = [
     `${latest.author.username} | ⚡ ${size} ${count}`
     `https://avatars.githubusercontent.com/${latest.author.username}`
@@ -34,11 +40,6 @@ module.exports.send = (
     ]
   }
 
-  core.debug(`Received payload: ${JSON.stringify(payload, null, 2)}`);
-  core.debug(`Received ${commits.length}/${size} commits...`);
-  core.info("Constructing Embed...");
-
-  let latest = commits[0];
   const count = size == 1 ? "Commit" : " Commits";
 
   let embed = new discord.MessageEmbed()
