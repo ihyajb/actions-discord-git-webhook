@@ -33,7 +33,8 @@ module.exports.send = (
     `https://github.com/${latest.author.username}`,
   ]
 
-  
+  core.info(censorUsername);
+
   if (censorUsername === true) {
     core.info("Changing AuthorEmbed");
     AuthorEmbed = [
