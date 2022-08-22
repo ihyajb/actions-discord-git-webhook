@@ -35,7 +35,7 @@ module.exports.send = (
 
   core.info(censorUsername);
 
-  if (censorUsername == true) {
+  if (censorUsername == false) {
     core.info("Changing AuthorEmbed");
     AuthorEmbed = [
       `⚡ ${size} ${count}`,
@@ -96,7 +96,7 @@ module.exports.getChangeLog = (payload, hideLinks, censorUsername) => {
     const firstUsername = commit.author.username[0];
     const lastUsername = commit.author.username[commit.author.username.length - 1];
     var username = commit.author.username;
-    if (censorUsername == true) {
+    if (censorUsername == false) {
       core.info("Censoring Username...");
       username = `${firstUsername}...${lastUsername}`;
     } else {
