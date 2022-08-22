@@ -25,6 +25,7 @@ module.exports.send = (
   core.info("Constructing Embed...");
 
   let latest = commits[0];
+  const count = size == 1 ? "Commit" : " Commits";
 
   var AuthorEmbed = [
     `${latest.author.username} | ⚡ ${size} ${count}`
@@ -39,8 +40,6 @@ module.exports.send = (
       ``
     ]
   }
-
-  const count = size == 1 ? "Commit" : " Commits";
 
   let embed = new discord.MessageEmbed()
     .setColor(color)
