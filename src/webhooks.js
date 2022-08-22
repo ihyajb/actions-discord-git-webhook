@@ -27,11 +27,13 @@ module.exports.send = (
   let latest = commits[0];
   const count = size == 1 ? "Commit" : " Commits";
 
-  var AuthorEmbed = [
+  let AuthorEmbed = [
     `${latest.author.username} | ⚡ ${size} ${count}`,
     `https://avatars.githubusercontent.com/${latest.author.username}`,
     `https://github.com/${latest.author.username}`,
   ]
+
+  core.info(censorUsername);
 
   if (censorUsername === true) {
     AuthorEmbed = [
