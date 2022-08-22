@@ -28,16 +28,16 @@ module.exports.send = (
   const count = size == 1 ? "Commit" : " Commits";
 
   var AuthorEmbed = [
-    `${latest.author.username} | ⚡ ${size} ${count}`
-    `https://avatars.githubusercontent.com/${latest.author.username}`
-    `https://github.com/${latest.author.username}`
+    `${latest.author.username} | ⚡ ${size} ${count}`,
+    `https://avatars.githubusercontent.com/${latest.author.username}`,
+    `https://github.com/${latest.author.username}`,
   ]
 
   if (censorUsername === true) {
     AuthorEmbed = [
-      `⚡ ${size} ${count}`
-      ``
-      ``
+      `⚡ ${size} ${count}`,
+      '',
+      '',
     ]
   }
 
