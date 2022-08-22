@@ -14,6 +14,7 @@ module.exports.send = (
   const size = commits.length;
   const branch = payload.ref.split("/")[payload.ref.split("/").length - 1];
   const url = payload.compare;
+  censorUsername = censorUsername.toString();
 
   if (commits.length === 0) {
     core.warning(`Aborting analysis, found no commits.`);
@@ -33,19 +34,12 @@ module.exports.send = (
     `https://github.com/${latest.author.username}`,
   ]
 
-  censorUsername = censorUsername.toString();
-
-  console.log(censorUsername)
-
-  if (censorUsername == 'true') {
-    core.info("Changing AuthorEmbed");
+  if (censorUsername == 'true') { // This is shit code.... I know.
     AuthorEmbed = [
       `⚡ ${size} ${count}`,
       '',
       '',
     ]
-  } else {
-    core.info("NOT Changing AuthorEmbed");
   }
 
   let embed = new discord.MessageEmbed()
@@ -97,12 +91,9 @@ module.exports.getChangeLog = (payload, hideLinks, censorUsername) => {
     let commit = commits[i];
     const firstUsername = commit.author.username[0];
     const lastUsername = commit.author.username[commit.author.username.length - 1];
-    var username = commit.author.username;
+    let username = commit.author.username;
     if (censorUsername == 'true') {
-      core.info("Censoring Username...");
       username = `${firstUsername}...${lastUsername}`;
-    } else {
-      core.info("NOT Censoring Username...");
     }
     const repository = payload.repository;
 

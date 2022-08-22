@@ -8,6 +8,8 @@ This is a hard fork of the original Discord Webhook GitHub Action, which was spe
 
 ![preview](./docs/img.png)
 
+![preview](./docs/img2.png)
+
 ## :mailbox_with_no_mail: Inputs
 
 ### `webhook_url`
